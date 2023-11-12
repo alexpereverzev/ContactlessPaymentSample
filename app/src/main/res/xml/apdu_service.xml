@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<host-apdu-service xmlns:android="http://schemas.android.com/apk/res/android"
+    android:apduServiceBanner="@drawable/cellphone_nfc"
+    android:description="@string/app_name"
+    android:requireDeviceUnlock="false">
+    <aid-group
+        android:category="payment"
+        android:description="@string/app_description">
+        <!-- Visa -->
+        <aid-filter android:name="A0000000031010" />
+        <!-- MasterCard -->
+        <aid-filter android:name="A0000000043060" />
+        <aid-filter android:name="A0000000041010" /> <!-- mastercard credit or debit -->
+        <aid-filter android:name="A0000000049999" /> <!-- mastercard paypass -->
+    </aid-group>
+</host-apdu-service>

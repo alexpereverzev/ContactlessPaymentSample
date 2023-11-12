@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">ContactlessPaymentSample</string>
+    <string name="app_description">Service contactless</string>
+</resources>
