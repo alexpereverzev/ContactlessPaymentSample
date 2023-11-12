@@ -15,7 +15,9 @@ class NfcSettingsChecker(
     private val cardEmulation: CardEmulation? = nfcAdapter?.let { CardEmulation.getInstance(nfcAdapter) }
     private val paymentServiceComponent = ComponentName(context, PaymentService::class.java.canonicalName.orEmpty())
 
-    val isNfcEnable: Boolean = nfcAdapter?.isEnabled ?: false
+    val isNfcEnable: Boolean
+        get() = nfcAdapter?.isEnabled ?: false
 
-    val isPaymentDefaultService: Boolean = cardEmulation?.isDefaultServiceForCategory(paymentServiceComponent, CardEmulation.CATEGORY_PAYMENT) ?: false
+    val isPaymentDefaultService: Boolean
+        get() = cardEmulation?.isDefaultServiceForCategory(paymentServiceComponent, CardEmulation.CATEGORY_PAYMENT) ?: false
 }
